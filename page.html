@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<title>Page</title>
+		<link rel="stylesheet" href="assets/styles/main.css">
+	</head>
+
+	<body>
+		<div class="page-container">
+			<div class="page-header">
+				<h1 class="page-header__title">Saving Reminders</h1>
+				<article class="page-header__description">
+					<p>
+						Today is nearly complete, but you still have a few important features to add. You need to save reminders and present an alert controller if something goes wrong.
+					<p>
+					<br />
+					<p>
+						In this tutorial, you’ll save reminders to the event store and delete them from it. You’ll also present an alert controller to the user if the save operation fails.
+					</p>
+				</article>
+				<div class="meta-data">
+					<div class="meta-data__item">15 минут</div>
+					<div class="meta-data__item">Xcode 12</div>
+					<div class="meta-data__item">Исходный проект</div>
+				</div>
+			</div>
+
+			<div class="page-content">
+				<section class="page-section">
+					<div class="info">
+						<h4 class="info__order-name">Секция 1</h4>
+						<h2 class="info__title">Load a Specific Reminder</h2>
+						<p>
+							Today represents reminders using its internal Reminder model. Before writing reminder data to the event store, you need to retrieve the corresponding EKReminder object. In this section, write a new method that retrieves an EKReminder object for a given identifier.
+						</p>
+					</div>
+					<div class="image"></div>
+				</section>
+
+				<section class="page-section _steps">
+					<div class="steps">
+						<div class="steps-item _active" data-step="1">
+							<div class="inner-block">
+								<h4 class="inner-title">Шаг 1</h4>
+								<p>Add a method named readReminder to the bottom of the extension in ReminderListDataSource.swift.</p>
+								<br />
+								<p>The method accepts a string and a completion handler of type (EKReminder?) -&gt; Void.</p>
+							</div>
+
+							<div class="inner-comment">
+								Start by adding a method to fetch an individual reminder from the event store.
+							</div>
+						</div>
+
+						<div class="steps-item" data-step="2">
+							<div class="inner-block">
+								<h4 class="inner-title">Шаг 2</h4>
+								<p>Call the completion handler with nil and exit the method if the user hasn’t granted access to their reminders.</p>
+							</div>
+						</div>
+
+						<div class="steps-item" data-step="3">
+							<div class="inner-block">
+								<h4 class="inner-title">Шаг 3</h4>
+								<p>Query the event store for an item with an identifier that matches the id parameter.</p>
+								<br />
+								<p>The calendarItem(withIdentifier:) method returns an optional EKCalendarItem, which is the superclass for reminders and calendar events. You need to unwrap the optional and cast it as an EKReminder.</p>
+							</div>
+
+							<div class="inner-comment">
+								Items in the event store have a unique calendarItemIdentifier property. To read a reminder from the store, you search the event store for a calendar item with a calendarItemIdentifier that matches the id passed to the function. The calendarItem(withIdentifier:) method returns the first occurrence of an event or reminder with the specified identifier.
+							</div>
+						</div>
+
+						<div class="steps-item" data-step="4">
+							<div class="inner-block">
+								<h4 class="inner-title">Шаг 3</h4>
+								<p>Call the completion handler and pass the retrieved EKReminder.</p>
+							</div>
+
+							<div class="inner-comment">
+								Items in the event store have a unique calendarItemIdentifier property. To read a reminder from the store, you search the event store for a calendar item with a calendarItemIdentifier that matches the id passed to the function. The calendarItem(withIdentifier:) method returns the first occurrence of an event or reminder with the specified identifier.
+							</div>
+						</div>
+					</div>
+
+					<div class="steps-preview" id="preview-file">
+						<div class="steps-preview__name">ReminderListDataSource.swift</div>
+						<div class="steps-preview__image"></div>
+						<div class="steps-preview__code">
+							<div class="highlightsb">
+								<code>
+									CODE
+								</code>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+	</body>
+</html>

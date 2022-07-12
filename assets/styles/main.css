@@ -1,0 +1,158 @@
+@import url("fonts.css");
+@import url("reset.css");
+
+
+/*  VARS
+	-------------------------------------------------- */
+:root {
+	--text-color: rgba(49,62,98,.8);
+}
+
+
+/*  STYLES
+	-------------------------------------------------- */
+body {
+	padding: 45px;
+	font-family: "Gotham Pro";
+	color: var(--text-color);
+	background: #F2F4F5;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+	line-height: 52px;
+	font-size: 42px;
+	font-weight: 700;
+}
+
+h2 {
+	line-height: 38px;
+	font-size: 28px;
+	font-weight: 700;
+}
+
+h4 {
+	line-height: 28px;
+	font-size: 18px;
+	font-weight: 500;
+}
+
+
+/*  META BLOCK
+	-------------------------------------------------- */
+.meta-data {
+	display: grid;
+	grid-auto-flow: column;
+	margin-top: 40px;
+}
+
+.meta-data__item {
+	display: inline-flex;
+	align-items: center;
+	height: 60px;
+	min-width: 0;
+	padding: 0 20px;
+	font-size: 14px;
+	line-height: 28px;
+	color: var(--text-color);
+	background: #E7FAFF;
+	border-radius: 12px;
+}
+
+
+.page-container {
+	background: #FFF;
+	border-radius: 20px;
+}
+
+
+/*  PAGE HEADER
+	-------------------------------------------------- */
+.page-header {
+	padding: 40px;
+	color: #FFF;
+	background: #6B8BBC;
+	border-radius: 20px;
+}
+
+.page-header__title {
+	margin-bottom: 20px;
+}
+
+.page-header__description{
+	line-height: 28px;
+	font-size: 18px;
+}
+
+
+/*  PAGE CONTENT
+	-------------------------------------------------- */
+.page-content {
+	padding: 80px 40px 40px;
+}
+
+.info {
+	font-size: 18px;
+	line-height: 28px;
+}
+.info__order-name {
+	margin-bottom: 10px;
+}
+.info__title {
+	margin-bottom: 20px;
+}
+
+
+/*  STEPS
+	-------------------------------------------------- */
+.page-section._steps {
+	display: grid;
+	grid-template-columns: 390px minmax(0, auto); /* 37.8640776699% = 390px / 1030px * 100 */
+	column-gap: 40px;
+	margin-top: 80px;
+	width: 100%;
+}
+
+/* step item */
+.steps-item {
+	font-size: 14px;
+	line-height: 22px;
+}
+.steps-item + .steps-item {
+	margin-top: 100px;
+}
+
+/* step block*/
+.steps-item .inner-block {
+	position: relative;
+	padding: 30px 20px 30px 28px;
+	border: 1px solid #C8D1D7;
+	border-radius: 16px;
+}
+.steps-item._active .inner-block::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	border-left: 8px solid #205DD4;
+}
+/* step title */
+.steps-item .inner-title {
+	margin-bottom: 20px;
+}
+/* step comment */
+.steps-item .inner-comment {
+	margin-top: 20px;
+}
+
+/* steps preview code & video */
+.steps-preview {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+	height: 92vh;
+	background: #F2F4F5;
+	border-radius: 16px;
+}
