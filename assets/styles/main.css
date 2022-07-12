@@ -156,8 +156,8 @@ h4 {
 .steps-preview {
 	position: -webkit-sticky;
 	position: sticky;
-	top: 0;
-	height: 100vh;
+	top: 10px;
+	height: calc(100vh - 20px);
 	background: #F2F4F5;
 	border-radius: 16px;
 }
